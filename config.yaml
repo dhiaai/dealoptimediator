@@ -1,0 +1,180 @@
+# Business Agent System Configuration
+
+system:
+  name: "Business Deal Negotiation System"
+  version: "1.0.0"
+  
+agents:
+  deal_analyzer:
+    enabled: true
+    risk_threshold: 50
+    approval_confidence: 0.8
+    
+  negotiator:
+    enabled: true
+    max_discount_percent: 15
+    min_profit_margin: 0.15
+    strategy_approaches:
+      - collaborative
+      - competitive
+      - balanced
+    
+  reporter:
+    enabled: true
+    report_formats:
+      - json
+      - markdown
+      - html
+    metrics_tracked:
+      - revenue_growth
+      - conversion_rate
+      - client_satisfaction
+      - deal_velocity
+    
+  coordinator:
+    enabled: true
+    max_parallel_agents: 5
+    timeout_seconds: 300
+
+tools:
+  custom_tools:
+    - analyze_deal_terms
+    - generate_performance_report
+    - calculate_negotiation_strategy
+    - fetch_market_data
+  
+  # Future: MCP (Model Context Protocol) tools
+  mcp_tools: []
+  
+  # Future: OpenAPI tools
+  openapi_tools: []
+
+memory:
+  type: "in_memory"  # Options: in_memory, redis, postgresql
+  retention_days: 90
+  max_deal_history_per_client: 100
+  enable_context_compaction: true
+  compaction_threshold_tokens: 25000
+
+sessions:
+  type: "in_memory"  # Options: in_memory, redis, database
+  timeout_minutes: 60
+  enable_auto_save: true
+  checkpoint_interval_seconds: 30
+
+observability:
+  logging:
+    level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+    format: "json"  # text, json
+    output:
+      - console
+      - file
+    file_path: "agent_system.log"
+    rotation: "daily"
+    retention_days: 30
+  
+  metrics:
+    enabled: true
+    export_format: "prometheus"  # prometheus, json, custom
+    port: 9090
+    
+  tracing:
+    enabled: true
+    sample_rate: 1.0
+    backend: "opentelemetry"  # opentelemetry, jaeger, zipkin
+
+execution:
+  default_mode: "sequential"  # sequential, parallel, adaptive
+  max_loop_iterations: 10
+  enable_pause_resume: true
+  error_recovery: "checkpoint"  # checkpoint, retry, fail_fast
+  
+workflows:
+  deal_analysis:
+    steps:
+      - name: "market_research"
+        agent: "negotiator"
+        parallel: true
+      - name: "deal_analysis"
+        agent: "deal_analyzer"
+        parallel: true
+      - name: "strategy_development"
+        agent: "negotiator"
+        depends_on:
+          - market_research
+          - deal_analysis
+      - name: "store_memory"
+        agent: "coordinator"
+        
+  performance_report:
+    steps:
+      - name: "generate_report"
+        agent: "reporter"
+      - name: "fetch_historical"
+        agent: "coordinator"
+        parallel: true
+      - name: "coordinate_actions"
+        agent: "coordinator"
+        depends_on:
+          - generate_report
+          - fetch_historical
+
+  iterative_negotiation:
+    type: "loop"
+    max_iterations: 5
+    termination_condition: "deal_accepted"
+    steps:
+      - name: "analyze_offer"
+        agent: "deal_analyzer"
+      - name: "generate_counter"
+        agent: "negotiator"
+        condition: "offer_not_acceptable"
+
+# Market data configuration
+market_data:
+  industries:
+    - technology
+    - finance
+    - healthcare
+    - manufacturing
+    - retail
+  regions:
+    - global
+    - north_america
+    - europe
+    - asia_pacific
+  update_frequency_hours: 24
+
+# Business rules
+business_rules:
+  deal_approval:
+    min_profit_margin: 0.15
+    max_risk_score: 50
+    required_approvals: 1
+    
+  negotiation:
+    max_discount_percent: 15
+    preferred_payment_terms: "Net 30"
+    max_contract_duration_months: 36
+    
+  reporting:
+    min_conversion_rate: 0.20
+    target_client_satisfaction: 4.0
+    revenue_growth_target: 0.10
+
+# Integration endpoints (for future use)
+integrations:
+  crm:
+    enabled: false
+    type: "salesforce"
+    api_endpoint: ""
+    
+  erp:
+    enabled: false
+    type: "sap"
+    api_endpoint: ""
+    
+  market_data_provider:
+    enabled: false
+    provider: "bloomberg"
+    api_endpoint: ""
