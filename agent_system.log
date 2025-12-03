@@ -1,0 +1,43 @@
+2025-12-03 20:28:10,233 - INFO - System initialized successfully
+2025-12-03 20:28:10,234 - INFO - Memory bank initialized
+2025-12-03 20:28:10,234 - INFO - Session manager initialized
+2025-12-03 20:28:10,234 - INFO - DealAnalyzer agent initialized
+2025-12-03 20:28:10,234 - INFO - Negotiator agent initialized
+2025-12-03 20:28:10,235 - INFO - Reporter agent initialized
+2025-12-03 20:28:10,235 - INFO - Business Agent Orchestrator initialized
+2025-12-03 20:28:10,236 - INFO - Session created: session-20251203-202810
+2025-12-03 20:28:10,236 - INFO - Step 1: Parallel analysis and market research
+2025-12-03 20:28:10,243 - INFO - Fetching market data for technology in global
+2025-12-03 20:28:10,243 - INFO - DealAnalyzer: Starting deal analysis
+2025-12-03 20:28:10,243 - INFO - Market data retrieved
+2025-12-03 20:28:10,244 - INFO - Analyzing deal terms: DEAL-2024-001
+2025-12-03 20:28:10,244 - INFO - Deal analysis complete: approved
+2025-12-03 20:28:10,245 - INFO - Attempting to use model: models/gemini-2.5-flash-lite
+2025-12-03 20:28:16,355 - INFO - DealAnalyzer: Analysis complete
+2025-12-03 20:28:16,357 - INFO - Checkpoint saved for session: session-20251203-202810
+2025-12-03 20:28:16,358 - INFO - Step 2: Developing negotiation strategy
+2025-12-03 20:28:16,358 - INFO - Negotiator: Developing strategy
+2025-12-03 20:28:16,358 - INFO - Calculating negotiation strategy
+2025-12-03 20:28:16,358 - INFO - Strategy calculated: collaborative
+2025-12-03 20:28:16,358 - INFO - Fetching market data for technology in global
+2025-12-03 20:28:16,359 - INFO - Market data retrieved
+2025-12-03 20:28:16,360 - INFO - Attempting to use model: models/gemini-2.5-flash-lite
+2025-12-03 20:28:21,602 - INFO - Negotiator: Strategy developed
+2025-12-03 20:28:21,603 - INFO - Checkpoint saved for session: session-20251203-202810
+2025-12-03 20:28:21,604 - INFO - Step 3: Storing in long-term memory
+2025-12-03 20:28:21,604 - INFO - Deal DEAL-2024-001 stored in memory
+2025-12-03 20:28:21,604 - INFO - Deal workflow completed in 11.37s
+2025-12-03 20:28:21,612 - INFO - System initialized successfully
+2025-12-03 20:28:21,612 - INFO - Memory bank initialized
+2025-12-03 20:28:21,613 - INFO - Session manager initialized
+2025-12-03 20:28:21,613 - INFO - DealAnalyzer agent initialized
+2025-12-03 20:28:21,614 - INFO - Negotiator agent initialized
+2025-12-03 20:28:21,614 - INFO - Reporter agent initialized
+2025-12-03 20:28:21,614 - INFO - Business Agent Orchestrator initialized
+2025-12-03 20:28:21,614 - INFO - Starting performance report workflow
+2025-12-03 20:28:21,615 - INFO - Reporter: Generating report
+2025-12-03 20:28:21,615 - INFO - Generating performance report
+2025-12-03 20:28:21,615 - INFO - Performance report generated: RPT-20251203-202821
+2025-12-03 20:28:21,616 - INFO - Attempting to use model: models/gemini-2.5-flash-lite
+2025-12-03 20:28:26,840 - INFO - Reporter: Report generated
+2025-12-03 20:28:26,840 - INFO - Performance report workflow completed in 5.23s

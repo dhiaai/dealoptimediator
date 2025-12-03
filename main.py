@@ -304,9 +304,7 @@ def call_gemini_with_retry(prompt: str, max_retries: int = 3) -> str:
     
     # List available models and use the first one that supports generateContent
     available_models = [
-        "models/gemini-pro",
-        "models/gemini-1.5-pro",
-        "models/gemini-1.5-flash",
+        "models/gemini-2.5-flash-lite"
     ]
     
     for attempt in range(max_retries):
